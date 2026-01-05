@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ventas | Computer Corner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ventas.css">
+</head>
+<body>
+
+<!-- HEADER IGUAL AL INDEX -->
+<header class="header">
+    <div class="logo">
+        <img src="img/logo.png" alt="Computer Corner">
+        <span>Computer Corner</span>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<div class="menu-overlay" onclick="toggleMenu()"></div>
+
+<nav class="side-menu">
+    <a href="index.html">Inicio</a>
+    <a href="index.html#servicios">Servicios</a>
+    <a href="ventas.html">Ventas</a>
+    <a href="index.html#soporte">Soporte</a>
+    <a href="index.html#contacto">Contacto</a>
+</nav>
+
+<!-- CONTENIDO VENTAS -->
+<section class="ventas-hero">
+    <h1>Área de Ventas</h1>
+    <p>Licencias originales y productos digitales</p>
+</section>
+
+<section class="productos-section">
+    <h2>Microsoft Office</h2>
+
+    <div class="carousel">
+        <button class="carousel-btn left" onclick="scrollCarousel(-1)">‹</button>
+
+        <div class="carousel-track" id="carouselTrack">
+
+            <div class="product-card">
+                <img src="img/productos/office2019.jpg" alt="Office 2019">
+                <h3>Office 2019</h3>
+                <p class="price">S/ 120</p>
+                <a href="https://wa.me/51918260798" class="btn">Comprar</a>
+            </div>
+
+            <div class="product-card">
+                <img src="img/productos/office365.png" alt="Office 365">
+                <h3>Office 365</h3>
+                <p class="price">S/ 150</p>
+                <a href="https://wa.me/51918260798" class="btn">Comprar</a>
+            </div>
+
+            <div class="product-card">
+                <img src="img/productos/office2021.png" alt="Office 2021">
+                <h3>Office 2021</h3>
+                <p class="price">S/ 180</p>
+                <a href="https://wa.me/51918260798" class="btn">Comprar</a>
+            </div>
+
+            <div class="product-card">
+                <img src="img/productos/officepro.webp" alt="Office Pro Plus">
+                <h3>Office Pro Plus</h3>
+                <p class="price">S/ 220</p>
+                <a href="https://wa.me/51918260798" class="btn">Comprar</a>
+            </div>
+
+        </div>
+
+        <button class="carousel-btn right" onclick="scrollCarousel(1)">›</button>
+    </div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
