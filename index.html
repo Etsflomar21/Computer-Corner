@@ -14,10 +14,11 @@
         <span>Computer Corner</span>
     </div>
 
-    <!-- MENU DESKTOP -->
+    <!-- Menú escritorio -->
     <nav class="main-menu">
         <ul>
             <li><a href="#inicio">Inicio</a></li>
+
             <li class="dropdown">
                 <a href="#">Institución</a>
                 <ul class="submenu">
@@ -25,8 +26,26 @@
                     <li><a href="#">Misión y Visión</a></li>
                 </ul>
             </li>
+
             <li class="dropdown">
                 <a href="#">Oferta</a>
+                <ul class="submenu">
+                    <li><a href="#">Internet</a></li>
+                    <li><a href="#">Soporte Técnico</a></li>
+                    <li><a href="#">Software</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Atención Usuario</a>
+                <ul class="submenu">
+                    <li><a href="#">Reclamos</a></li>
+                    <li><a href="#">Sugerencias</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Venta</a>
                 <ul class="submenu">
                     <li class="dropdown">
                         <a href="#">Sistema Operativo</a>
@@ -35,14 +54,18 @@
                             <li><a href="#">Android</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Office</a></li>
+                    <li><a href="ventas.html">Office</a></li>
                     <li><a href="#">Antivirus</a></li>
                 </ul>
             </li>
-            <li><a href="#soporte">Soporte</a></li>
-            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
+
+    <!-- Botones login / registro -->
+    <div class="auth-buttons">
+        <a href="login.php" class="btn">Iniciar sesión</a>
+        <a href="register.php" class="btn">Registrarse</a>
+    </div>
 
     <!-- BOTON HAMBURGUESA -->
     <div class="menu-btn" onclick="toggleMenu()">
@@ -52,18 +75,20 @@
     </div>
 </header>
 
-<!-- PANEL LATERAL MOBILE -->
+<!-- PANEL LATERAL -->
 <div class="menu-overlay" onclick="toggleMenu()"></div>
 
 <nav class="side-menu">
     <a href="#inicio" onclick="toggleMenu()">Inicio</a>
     <a href="#servicios" onclick="toggleMenu()">Servicios</a>
-    <a href="ventas.html">Ventas</a>
+    <a href="ventas.html" onclick="toggleMenu()">Ventas</a>
     <a href="#soporte" onclick="toggleMenu()">Soporte</a>
     <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+    <hr>
+    <a href="login.php" onclick="toggleMenu()">Iniciar sesión</a>
+    <a href="register.php" onclick="toggleMenu()">Registrarse</a>
 </nav>
 
-<!-- HERO -->
 <section id="inicio" class="hero">
     <div class="hero-bg"></div>
     <div class="hero-bg"></div>
@@ -76,7 +101,6 @@
     </div>
 </section>
 
-<!-- SERVICIOS -->
 <section id="servicios" class="section">
     <h2>Nuestros Servicios</h2>
     <div class="cards">
@@ -95,7 +119,6 @@
     </div>
 </section>
 
-<!-- VENTAS -->
 <section id="ventas" class="section dark">
     <h2>Ventas</h2>
     <div class="cards">
@@ -110,19 +133,36 @@
     </div>
 </section>
 
-<!-- SOPORTE -->
 <section id="soporte" class="section">
     <h2>Soporte</h2>
     <p>Atención inmediata por WhatsApp</p>
     <a href="https://wa.me/51918260798" class="btn">Soporte</a>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="section dark">
-    <h2>Contacto</h2>
-    <p>📲 WhatsApp: 918 260 798</p>
-    <p>📍 Perú</p>
-</section>
+<!-- FOOTER -->
+<footer class="footer dark">
+    <div class="footer-top">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/etson.floresmartinez.33"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/instagram.jpg" alt="Instagram"></a>
+            <a href="#"><img src="img/tiktok.png" alt="Instagram"></a>
+            <a href="#"><img src="img/Youtube.png" alt="Instagram"></a>
+            <a href="#"><img src="img/Linkedin.png" alt="Instagram"></a>
+            <a href="#"><img src="img/Twitter.png" alt="Instagram"></a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Política de cookies</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Oficial de Datos Personales</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© TODOS LOS DERECHOS RESERVADOS</p>
+        <p>Computer-Corner.com S.A.C. Jr. Chachapoyas SN, CP Pomabamba, Perú</p>
+    </div>
+</footer>
 
 <a href="https://wa.me/51918260798" class="whatsapp">💬</a>
 
