@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #f4f6f9;
+    background: #fdfdfd; /* fondo blanquiñoso */
     color: #333;
 }
 
@@ -15,8 +15,9 @@ body {
     background: #0b1c2d;
     padding: 15px 25px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start; /* menú más cercano al logo */
+    gap: 50px;
 }
 
 .logo {
@@ -35,11 +36,96 @@ body {
     font-weight: bold;
 }
 
-/* BOTON HAMBURGUESA */
-.menu-btn {
+/* MENU DESKTOP */
+.main-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+}
+
+.main-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 8px 0;
+}
+
+.main-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #25d366;
+    transition: width .3s ease;
+}
+
+.main-menu a:hover::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+/* SUBMENÚ */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 220px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all .3s ease;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+    z-index: 100;
+}
+
+.dropdown:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* SUB-SUBMENÚ */
+.submenu .submenu {
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.submenu .dropdown:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu a {
+    color: #333;
+    padding: 12px 18px;
+    display: block;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background: #f4f6f9;
+}
+
+/* HAMBURGUESA */
+.menu-btn {
+    margin-left: auto;
+    display: none;
+    flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .menu-btn span {
@@ -47,10 +133,9 @@ body {
     height: 3px;
     background: #fff;
     margin: 4px 0;
-    border-radius: 5px;
 }
 
-/* OVERLAY */
+/* MENU MOBILE */
 .menu-overlay {
     position: fixed;
     inset: 0;
@@ -58,7 +143,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity .3s;
-    z-index: 9;
+    z-index: 998;
 }
 
 .menu-overlay.active {
@@ -66,7 +151,6 @@ body {
     pointer-events: all;
 }
 
-/* PANEL LATERAL */
 .side-menu {
     position: fixed;
     top: 0;
@@ -79,19 +163,12 @@ body {
     flex-direction: column;
     gap: 20px;
     transition: right .3s ease;
-    z-index: 10;
+    z-index: 999;
 }
 
 .side-menu a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.1rem;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    padding-bottom: 10px;
-}
-
-.side-menu a:hover {
-    color: #25d366;
 }
 
 .side-menu.active {
@@ -112,6 +189,11 @@ body {
     background-position: center;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
+    z-index: 0;
+}
+
+.hero-bg.active {
+    opacity: 1;
 }
 
 .hero::after {
@@ -119,27 +201,19 @@ body {
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.6);
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     color: #fff;
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
-    padding: 0 15px;
 }
 
-.hero h1 {
-    font-size: 2.2rem;
-}
-
-.hero p {
-    margin: 15px 0;
-}
-
-/* SECTIONS */
+/* SECCIONES */
 .section {
     padding: 60px 20px;
     text-align: center;
@@ -150,7 +224,6 @@ body {
     color: #fff;
 }
 
-/* CARDS */
 .cards {
     display: flex;
     justify-content: center;
@@ -170,7 +243,7 @@ body {
     background: #122c4d;
 }
 
-/* BOTON */
+/* BOTONES */
 .btn {
     display: inline-block;
     background: #25d366;
@@ -194,20 +267,11 @@ body {
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero {
-        height: 320px;
+@media (max-width: 900px) {
+    .main-menu {
+        display: none;
     }
-
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-
-    .logo img {
-        height: 38px;
-    }
-
-    .logo span {
-        font-size: 1.1rem;
+    .menu-btn {
+        display: flex;
     }
 }
